@@ -61,9 +61,7 @@ if($youShallPass == False and isset($_POST['submitbutton'])){
 
 ?>
 
-<?php
-footerFunction();
-?>
+<?php footerFunction(); ?>
 
 
 </body>
