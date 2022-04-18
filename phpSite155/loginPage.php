@@ -51,6 +51,8 @@ headerFunction()
   <input type="text" id="password" name="password"><br>
 
   <br> <input type="submit" name="submitbutton" value="Submit">
+  <h4> Correct Username: jwitte7 </h4>
+  <h4> Correct Password: 12345678 </h4>
 </form>
 
 <?php
