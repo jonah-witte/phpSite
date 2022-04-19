@@ -1,11 +1,15 @@
+<!--  I honor Parkland's core values by affirming that I have 
+followed all academic integrity guidelines for this work.
+Jonah Witte
+CSC 155 -->
+
+
+
 <?php
 session_start();
 include('library/htmlFunctions.php');
 
-if(!isset($_SESSION['username']) and !isset($_SESSION['password'])){
-  header('Location: http://www.csit.parkland.edu/~jwitte7/phpSite155/loginPage.php');
-  exit;
-}
+checkSession();
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,9 +22,11 @@ if(!isset($_SESSION['username']) and !isset($_SESSION['password'])){
 <?php
 headerFunction();
 ?>
-
-<p> This is the shopping cart page </p>
-
+<?php
+  echo '<p> You have ' . $_SESSION['jellybeans'] . ' Jellybeans in your cart </p>';
+  echo '<p> You have ' . $_SESSION['waterbottles'] . ' Water Bottles in your cart </p>';
+  echo '<p> You have ' . $_SESSION['potatoes'] . ' Potatoes in your cart </p>';
+?>
 
 <?php
 footerFunction();

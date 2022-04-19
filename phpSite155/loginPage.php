@@ -1,3 +1,9 @@
+<!--  I honor Parkland's core values by affirming that I have 
+followed all academic integrity guidelines for this work.
+Jonah Witte
+CSC 155 -->
+
+
 <?php
 session_start();
 include('library/htmlFunctions.php');
@@ -20,6 +26,9 @@ if(isset($_POST['password'])){
 if($enteredUser == $correctUser and $enteredPass == $correctPass){
   $_SESSION['username'] = $enteredUser;
   $_SESSION['password'] = $enteredPass;
+  $_SESSION['jellybeans'] = 0;
+  $_SESSION['waterbottles'] = 0;
+  $_SESSION['potatoes'] = 0;
   $youShallPass = True;
   header('Location: http://www.csit.parkland.edu/~jwitte7/phpSite155/welcome.php');
   exit;
@@ -51,6 +60,7 @@ headerFunction()
   <input type="text" id="password" name="password"><br>
 
   <br> <input type="submit" name="submitbutton" value="Submit">
+
   <h4> Correct Username: jwitte7 </h4>
   <h4> Correct Password: 12345678 </h4>
 </form>
@@ -58,12 +68,12 @@ headerFunction()
 <?php
 
 if($youShallPass == False and isset($_POST['submitbutton'])){
-  echo '<br>YOU SHALL NOT PASS';
+  echo '<br>Incorrect Username or Password<br> Please Try Again.';
 }
 
 ?>
 
-<?php footerFunction(); ?>
+
 
 
 </body>

@@ -3,16 +3,11 @@ followed all academic integrity guidelines for this work.
 Jonah Witte
 CSC 155 -->
 
-
-
 <?php
 session_start();
 include('library/htmlFunctions.php');
 
-if(!isset($_SESSION['username']) and !isset($_SESSION['password'])){
-  header('Location: http://www.csit.parkland.edu/~jwitte7/phpSite155/loginPage.php');
-  exit;
-}
+checkSession();
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,7 +21,27 @@ if(!isset($_SESSION['username']) and !isset($_SESSION['password'])){
 headerFunction();
 ?>
 
-<p> This is a place holder for Item page TWO </p>
+<p> BUY YOUR WATER BOTTLES HERE </p>
+<form method="POST">
+<input type="submit" name="buyOne" value="Buy One">
+<input type="submit" name="removeOne" value="Remove One">
+<input type="submit" name="removeAll" value="Remove All">
+</form>
+<?php
+  if(isset($_POST['buyOne'])){
+    $_SESSION['waterbottles'] = $_SESSION['waterbottles'] + 1;
+  }
+  if(isset($_POST['removeOne'])){
+     if($_SESSION['waterbottles'] > 0){
+       $_SESSION['waterbottles'] = $_SESSION['waterbottles'] - 1;
+     }
+  }
+  if(isset($_POST['removeAll'])){
+    $_SESSION['waterbottles'] = 0;
+  }
+  echo '<p> You have ' . $_SESSION['waterbottles'] . ' Water Bottles in your cart </p>';
+?>
+
 <?php
 footerFunction();
 ?>
