@@ -25,13 +25,11 @@ headerFunction();
 ?>
 
 <p> Welcome Logged in User! </p>
-<!--<p> Here are the links to the different item pages! </p>
-<a href="http://www.csit.parkland.edu/~jwitte7/phpSite155/shoppingCart.php"> ShoppingCart <a> | 
-<a href="http://www.csit.parkland.edu/~jwitte7/phpSite155/item1.php"> ItemOne <a> | 
-<a href="http://www.csit.parkland.edu/~jwitte7/phpSite155/item2.php"> ItemTwo <a> |
-<a href="http://www.csit.parkland.edu/~jwitte7/phpSite155/item3.php"> ItemThree <a> |
-<a href="http://www.csit.parkland.edu/~jwitte7/phpSite155/item4.php"> ItemFour <a> |
--->
+<form method="POST">
+  <label for="nickname">Enter a nickname:</label><br>
+  <input type="text" id="nickname" name="nickname"><br>
+  <br><input type="submit" name="nicknameSubmit" value= "Submit">
+</form>
 <?php
 footerFunction();
 ?>
