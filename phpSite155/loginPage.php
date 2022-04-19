@@ -29,6 +29,7 @@ if($enteredUser == $correctUser and $enteredPass == $correctPass){
   $_SESSION['jellybeans'] = 0;
   $_SESSION['waterbottles'] = 0;
   $_SESSION['potatoes'] = 0;
+  $_SESSION['nickname'] = "";
   $youShallPass = True;
   header('Location: http://www.csit.parkland.edu/~jwitte7/phpSite155/welcome.php');
   exit;
@@ -50,7 +51,7 @@ if($enteredUser == $correctUser and $enteredPass == $correctPass){
 <body>
 <?php 
 
-headerFunction()
+footerFunction()
 
 ?>
 <form action="loginPage.php" method="POST">
